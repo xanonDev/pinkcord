@@ -13,6 +13,9 @@ and slightly different functions
 3. Open the command prompt in Windows or the terminal in Linux and run `python setup.py`. If that doesn't work, try `py setup.py`.
 4. Follow the instructions provided.
 
+## Platforms
+the program was written for windows, so a large amount may not work on normal linux, and even more so on termux or mac. it is possible that in the future there will be an adaptation of pinkcord to more platforms
+
 ## Commands
 
 The following commands can be used with Pinkcord:
