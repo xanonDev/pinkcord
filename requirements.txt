@@ -1,0 +1,7 @@
+discord.py==1.7.3
+pyautogui
+requests
+keyboard
+pyperclip
+playsound
+pyinstaller==4.10
