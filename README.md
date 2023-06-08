@@ -1,101 +1,57 @@
 # PINKCORD
 
-a computer virus that uses discord bots to transmit information
-written in Python
-the program was written for educational purposes and should not be used to break the law
-as it may have serious legal consequences
-using pinkcord may result in banning your discord account!!!
-download now!!!
+Pinkcord is a computer virus written in Python that utilizes Discord bots to transmit information. Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
 
-## HOW TO USE
+## How to Use
 
-1. install python from <a href="https://www.python.org/downloads/">official website</a>
-2.download files from this repository
-3. run cmd in windows or terminal in linux and write python setup.py
-if it doesn't work write py setup.py
-4.follow the instructions
+1. Install Python from the [official website](https://www.python.org/downloads/).
+2. Download the files from this repository.
+3. Open the command prompt in Windows or the terminal in Linux and run `python setup.py`. If that doesn't work, try `py setup.py`.
+4. Follow the instructions provided.
 
-## COMMANDS
+## Commands
 
-!shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
-!ss [session] - Captures a screenshot from a remote computer.
-!keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
-!steal [session] [file_names] - Steals files from a remote computer.
-!info [session] - Retrieves information about the remote computer system.
-!cd [session] [path] - Changes the current directory on the remote computer.
-!up [session] - Increases the volume on the remote computer.
-!down [session] - Decreases the volume on the remote computer.
-!message [session] [title] [button] [message] - Displays a message on the remote computer.
-!dir [session] - Displays the current directory on the remote computer.
-!upload [session] [link] [file_name] - Sends a file to the remote computer.
-!click [session] [x] [y] - Clicks at a specific location on the screen.
-!press [session] [key] - Presses a specific key (default: Enter).
-!cli [session] - Copies the clipboard content.
-!write [session] [message] - Types using the keyboard.
-!loc [session] - Displays IP information.
-!cdrom [session] - Opens the CD-ROM drive.
-!audio [session] [file_name] - Plays an audio file.
-!sessions - Displays all sessions.
-!rename [session] [new_name] - Changes the name of a session.
+The following commands can be used with Pinkcord:
 
-## LIBRARIES USED
+- `!shell [session] [output(yes, no)] [command]`: Executes a shell command on a remote computer.
+- `!ss [session]`: Captures a screenshot from a remote computer.
+- `!keylogger [session] [action(start, stop, log)]`: Starts or stops a keylogger on a remote computer.
+- `!steal [session] [file_names]`: Steals files from a remote computer.
+- `!info [session]`: Retrieves information about the remote computer system.
+- `!cd [session] [path]`: Changes the current directory on the remote computer.
+- `!up [session]`: Increases the volume on the remote computer.
+- `!down [session]`: Decreases the volume on the remote computer.
+- `!message [session] [title] [button] [message]`: Displays a message on the remote computer.
+- `!dir [session]`: Displays the current directory on the remote computer.
+- `!upload [session] [link] [file_name]`: Sends a file to the remote computer.
+- `!click [session] [x] [y]`: Clicks at a specific location on the screen.
+- `!press [session] [key]`: Presses a specific key (default: Enter).
+- `!cli [session]`: Copies the clipboard content.
+- `!write [session] [message]`: Types using the keyboard.
+- `!loc [session]`: Displays IP information.
+- `!cdrom [session]`: Opens the CD-ROM drive.
+- `!audio [session] [file_name]`: Plays an audio file.
+- `!sessions`: Displays all sessions.
+- `!rename [session] [new_name]`: Changes the name of a session.
 
-### os
+## Libraries Used
 
-execution of system commands
+The following libraries are used in Pinkcord:
 
-### threading
+- `os`: Execution of system commands.
+- `threading`: Launching a keylogger in another thread.
+- `time`: Pausing the program for a specific duration using the sleep function.
+- `zipfile`: Zipping data.
+- `discord.py`: Communicating with Discord.
+- `pyautogui`: Providing various functions related to user interface automation.
+- `requests`: Communicating with other websites.
+- `keyboard`: Operating the keyboard.
+- `base64`: Encoding the token and program.
+- `codecs`: Encoding the token and program.
+- `sys`: Running Python commands.
+- `pyperclip`: Stealing data from the clipboard.
+- `subprocess`: Performing system functions.
+- `playsound`: Playing sounds.
+- `platform`: Recognizing the platform.
 
-launching a keylogger in another thread
-
-### times
-
-using the sleep function to pause the program for a while
-
-### zipfile
-
-to zip data
-
-### discord.py
-
-to communicate with discord
-
-### pyautogui
-
-to some functions
-
-### requests
-
-for communication with other websites
-
-### keyboard
-
-to operate the keyboard
-
-### base64
-
-to encode the token and the program
-
-### codecs
-
-to encode the token and the program
-
-### sys
-
-to run python commands
-
-### pyperclip
-
-stealing data from clipboard
-
-### subprocess
-
-performing system functions
-
-### playsound
-
-to make sounds
-
-### platform
-
-to recognize the platform
+Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
