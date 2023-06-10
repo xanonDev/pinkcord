@@ -10,7 +10,7 @@ and slightly different functions
 
 1. Install Python from the [official website](https://www.python.org/downloads/).
 2. Download the files from this repository.
-3. Open the command prompt in Windows or the terminal in Linux and run `python setup.py`. If that doesn't work, try `py setup.py`.
+3. Open a command prompt on Windows or a terminal on Linux and run python setup.py. If that doesn't work, try py setup.py. or if you are on windows you can just click on setup.bat
 4. Follow the instructions provided.
 
 ## Platforms
