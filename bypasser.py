@@ -10,4 +10,4 @@ kod = codecs.decode(kod, 'rot13')
 f.close()
 with open("to_bypass.txt", 'w') as f:
     f.write(kod)
-print("[*] the encoded code is in the to_bypass.txt")
+print("[*] encoded")
