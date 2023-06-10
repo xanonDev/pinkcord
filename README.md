@@ -12,6 +12,7 @@ and slightly different functions
 2. Download the files from this repository.
 3. Open a command prompt on Windows or a terminal on Linux and run python setup.py. If that doesn't work, try py setup.py. or if you are on windows you can just click on setup.bat
 4. Follow the instructions provided.
+5. if the program compiles to exe. just enable it on the computer you want to control
 
 ## Platforms
 the program was written for windows, so a large amount may not work on normal linux, and even more so on termux or mac. it is possible that in the future there will be an adaptation of pinkcord to more platforms
