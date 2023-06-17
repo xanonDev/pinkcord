@@ -13,7 +13,6 @@ import codecs
 import sys
 import pyperclip
 from subprocess import call
-from playsound import playsound
 
 while True:
     try:
