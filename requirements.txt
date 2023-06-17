@@ -3,5 +3,4 @@ pyautogui
 requests
 keyboard
 pyperclip
-playsound
 pyinstaller==4.10
