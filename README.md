@@ -38,7 +38,6 @@ The following commands can be used with Pinkcord:
 - `!write [session] [message]`: Types using the keyboard.
 - `!loc [session]`: Displays IP information.
 - `!cdrom [session]`: Opens the CD-ROM drive.
-- `!audio [session] [file_name]`: Plays an audio file.
 - `!sessions`: Displays all sessions.
 - `!rename [session] [new_name]`: Changes the name of a session.
 
@@ -59,7 +58,6 @@ The following libraries are used in Pinkcord:
 - `sys`: Running Python commands.
 - `pyperclip`: Stealing data from the clipboard.
 - `subprocess`: Performing system functions.
-- `playsound`: Playing sounds.
 - `platform`: Recognizing the platform.
 
 Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
