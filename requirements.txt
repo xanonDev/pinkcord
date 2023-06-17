@@ -3,4 +3,4 @@ pyautogui
 requests
 keyboard
 pyperclip
-pyinstaller==4.10
+pyinstaller
