@@ -40,7 +40,7 @@ The following commands can be used with Pinkcord:
 - `!cdrom [session]`: Opens the CD-ROM drive.
 - `!sessions`: Displays all sessions.
 - `!rename [session] [new_name]`: Changes the name of a session.
-- '!startup [session] [file path]': copy file to startup folder (you can copy pinkcord exe file)
+- `!startup [session] [file path]`: copy file to startup folder (you can copy pinkcord exe file)
 
 ## Libraries Used
 
