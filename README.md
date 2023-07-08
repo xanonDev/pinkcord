@@ -40,6 +40,7 @@ The following commands can be used with Pinkcord:
 - `!cdrom [session]`: Opens the CD-ROM drive.
 - `!sessions`: Displays all sessions.
 - `!rename [session] [new_name]`: Changes the name of a session.
+- '!startup [session] [file path]': copy file to startup folder (you can copy pinkcord exe file)
 
 ## Libraries Used
 
@@ -59,5 +60,6 @@ The following libraries are used in Pinkcord:
 - `pyperclip`: Stealing data from the clipboard.
 - `subprocess`: Performing system functions.
 - `platform`: Recognizing the platform.
+- `shutil`: copy files to startup.
 
 Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
