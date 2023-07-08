@@ -13,6 +13,7 @@ import codecs
 import sys
 import pyperclip
 from subprocess import call
+import shutil
 
 while True:
     try:
