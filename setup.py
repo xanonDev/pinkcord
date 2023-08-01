@@ -9,8 +9,10 @@ TOKEN_FILE = 'pinkcord.py'
 TO_BYPASS_FILE = 'to_bypass.txt'
 BYPASS_FILE = 'pinkcord_bypass.py'
 DIST_FOLDER = 'dist'
+COLOR_RESET = "\033[0m"
+GREEN_COLOR = "\033[32m"
 
-asciart = '''
+asciart = "\033[95m" + '''
   _____ _____ _   _ _  _______ ____  _____  _____  
  |  __ \_   _| \ | | |/ / ____/ __ \|  __ \|  __ \ 
  | |__) || | |  \| | ' / |   | |  | | |__) | |  | |
@@ -20,7 +22,7 @@ asciart = '''
 
 https://github.com/xanonDev/pinkcord
 [!] some functions may not work on linux, so I recommend using windows to run this script
-'''
+''' + COLOR_RESET
 
 
 def clear_console():
@@ -36,7 +38,7 @@ print("Installing required libraries...")
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
 clear_console()
 print(asciart)
-print("Libraries installed[*]")
+print(GREEN_COLOR + "Libraries installed[*]" + COLOR_RESET)
 token = input("Enter your Discord bot token: ")
 print("Encoding token...")
 token = token.encode('utf-8')
@@ -44,7 +46,7 @@ token = base64.b64encode(token)
 token = base64.b32encode(token)
 token = token.decode('utf-8')
 token = codecs.encode(token, 'rot13')
-print("Token encoded[*]")
+print(GREEN_COLOR + "Token encoded[*]" + COLOR_RESET)
 print('Replacing the token in the pinkcord.py file....')
 with open(TOKEN_FILE, 'r') as sc:
     content = sc.read()
@@ -117,8 +119,8 @@ if answer == "1":
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
-    print(f"[*] {BYPASS_FILE} generated in the {DIST_FOLDER} folder")
-    print("[!] Remember, this program is for educational purposes only and should not be used for illegal activities")
+    print(GREEN_COLOR + f"[*] {BYPASS_FILE} generated in the {DIST_FOLDER} folder" + COLOR_RESET)
+    print("\033[31m" + "[!] Remember, this program is for educational purposes only and should not be used for illegal activities" + COLOR_RESET)
 else:
     clear_console()
     print(asciart)
@@ -140,5 +142,5 @@ else:
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
-    print(f"[*] pinkcord.exe generated in the {DIST_FOLDER} folder")
-    print("[!] Remember this program is for educational purposes only and should not be used for illegal activities")
+    print(GREEN_COLOR + f"[*] pinkcord.exe generated in the {DIST_FOLDER} folder" + COLOR_RESET)
+    print("\033[31m" + "[!] Remember this program is for educational purposes only and should not be used for illegal activities" + COLOR_RESET)
