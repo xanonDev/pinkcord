@@ -4,3 +4,5 @@ requests
 keyboard
 pyperclip
 pyinstaller
+pypiwin32
+pycryptodomex
