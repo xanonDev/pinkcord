@@ -14,6 +14,10 @@ import sys
 import pyperclip
 from subprocess import call
 import shutil
+import sqlite3
+import json
+import win32crypt
+from Cryptodome.Cipher import AES
 
 while True:
     try:
