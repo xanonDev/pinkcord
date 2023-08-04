@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    font-size: 20px;
+    color: white;
+}
+
+
+pre {
+    color: purple;
+}
+
+.point {
+    color: green;
+}
+
+.content {
+    color: yellow;
+}
+
+.warning {
+    color: red;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 40px;
+    }
+}
