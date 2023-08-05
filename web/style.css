@@ -29,6 +29,10 @@ pre {
 #skip {
     cursor: pointer;
     text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #skip:hover {
