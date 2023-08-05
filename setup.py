@@ -121,7 +121,7 @@ if answer == "1":
     PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
-    print(GREEN_COLOR + f"[*] {BYPASS_FILE} generated in the {DIST_FOLDER} folder" + COLOR_RESET)
+    print(GREEN_COLOR + f"[*] pinkcord_bypass.exe generated in the {DIST_FOLDER} folder" + COLOR_RESET)
     print("\033[31m" + "[!] Remember, this program is for educational purposes only and should not be used for illegal activities" + COLOR_RESET)
 else:
     clear_console()
