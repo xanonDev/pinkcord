@@ -1,16 +1,15 @@
 body {
-    background-color: black;
+    background-color: #070707;
     font-size: 20px;
     color: white;
 }
 
-
 pre {
-    color: purple;
+    color: #e13df7;
 }
 
 .point {
-    color: green;
+    color: #00ff00;
 }
 
 .content {
