@@ -10,9 +10,9 @@ _____ _____ _   _ _  _______ ____  _____  _____
 |_|   |_____|_| \_|_|\_\_____\____/|_|  \_\_____/ 
 '''
 content = f'''
+{RED_COLOR}[!] click to skip animations
 {GREEN_COLOR}[*] what is pinkcord
-{YELLOW_COLOR}[?] Pinkcord is a open source computer virus written in Python that utilizes Discord bots to transmit information.
-{RED_COLOR}[!] Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
+{YELLOW_COLOR}[?] Pinkcord is an Remote Access Trojan (R.A.T) open source computer virus written in Python that utilizes Discord bots to transmit information.
 {GREEN_COLOR}[*] how to download and use it?
 {YELLOW_COLOR}[1] download files from github
 [2] download python from official site
