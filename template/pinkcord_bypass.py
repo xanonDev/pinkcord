@@ -18,9 +18,7 @@ import sqlite3
 import json
 import win32crypt
 from Cryptodome.Cipher import AES
-from Cryptodome.Random import get_random_bytes
-from Cryptodome.Protocol.KDF import PBKDF2
-from Cryptodome.Util.Padding import pad, unpad
+from Cryptodome.Util.Padding import unpad
 
 def decrypt_code(encrypted_text, key):
     encrypted_bytes = base64.b64decode(encrypted_text)
