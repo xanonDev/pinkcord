@@ -4,6 +4,8 @@ from Cryptodome.Cipher import AES
 from Cryptodome.Random import get_random_bytes
 from Cryptodome.Protocol.KDF import PBKDF2
 from Cryptodome.Util.Padding import pad, unpad
+import secrets
+import string
 
 def encrypt_code_AES(text, key):
     cipher = AES.new(key, AES.MODE_CBC)
@@ -17,7 +19,9 @@ kod = base64.b64encode(kod)
 kod = kod.decode('utf-8')
 kod = codecs.decode(kod, 'rot13')
 salt = get_random_bytes(32)
-password = "pinkcord_IS_awansome"
+chars = string.ascii_letters + string.digits + string.punctuation
+length = 10000
+password = ''.join(secrets.choice(chars) for _ in range(length))
 key = PBKDF2(password.encode(), salt, dkLen=32, count=1000000)
 kod = encrypt_code_AES(kod, key)
 f.close()
