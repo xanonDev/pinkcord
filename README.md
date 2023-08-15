@@ -4,7 +4,7 @@ Pinkcord is a computer virus written in Python that utilizes Discord bots to tra
 to put it simply, pinkcord can be compared to meterpreter from metasploit
 only pinkcord works outside the local network and transmits data via discord
 and slightly different functions
-![Banner](https://github.com/xanonDev/pinkcord/blob/2f65ecb39b6f09f6be9500908f4b800fe442c41e/banner.png)
+![Banner](https://github.com/xanonDev/pinkcord/blob/4391b36f15b57af328f6b2760aa484c7cb2c207d/pic/banner.png)
 
 ## How to Use
 
