@@ -1,0 +1,58 @@
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #00ff00;
+}
+
+section {
+    background-color: #000000;
+    padding: 40px;
+}
+
+section h2 {
+    color: #00ff00;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Hacking style */
+pre {
+    color: #00ff00;
+    background-color: #000000;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #00ff00;
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+.warning, .point, .content {
+    color: #00ff00;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.warning {
+    font-weight: bold;
+}
+
+.point {
+    font-weight: bold;
+}
+
+/* Additional hacking styling */
+.hacking-container {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.hacking-container p {
+    color: #00ff00;
+    margin: 10px 0;
+}
