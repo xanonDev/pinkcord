@@ -1,0 +1,41 @@
+body {
+    background-color: #070707;
+    font-size: 20px;
+    color: white;
+}
+
+pre {
+    color: #e13df7;
+}
+
+.point {
+    color: #00ff00;
+}
+
+.content {
+    color: yellow;
+}
+
+.warning {
+    color: red;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 40px;
+    }
+}
+
+#skip {
+    cursor: pointer;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#skip:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
