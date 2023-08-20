@@ -44,7 +44,6 @@ The following commands can be used with Pinkcord:
 - `!rename [session] [new_name]`: Changes the name of a session.
 - `!startup [session] [file path]`: copy file to startup folder (you can copy pinkcord exe file)
 - `!chrome [session] [action(cookie)]` - steals selected data from chrome
-
 ## Libraries Used
 
 The following libraries are used in Pinkcord:
@@ -63,11 +62,12 @@ The following libraries are used in Pinkcord:
 - `pyperclip`: Stealing data from the clipboard.
 - `subprocess`: Performing system functions.
 - `platform`: Recognizing the platform.
-- `shutil`: copy files to startup.
-- `sqlite3`: open chrome cookie file
-- `json`: getting the decryption key
-- `win32crypt`: decrypt cookies
-- `Cryptodome.Cipher`: decrypt cookies
+- `shutil`: Copy files to startup.
+- `sqlite3`: Opening a Chrome cookie file.
+- `json`: Getting the decryption key.
+- `win32crypt`: Decrypting cookies.
+- `Cryptodome.Cipher`: Decrypting cookies.
+
 
 
 Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
