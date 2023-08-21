@@ -65,6 +65,10 @@ The following libraries are used in Pinkcord:
 - `win32crypt`: Decrypting cookies.
 - `Cryptodome.Cipher`: Decrypting cookies.
 
+## Pinkcord Website
 
+For more information, you can visit the [Pinkcord Project Website](https://pinkcord-project--xanondev.repl.co/) where you can find additional resources and details about the project.
+
+---
 
 Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
