@@ -128,22 +128,19 @@ if answer == "1":
     import PyInstaller.__main__
     print(GREEN_COLOR + "Generating exe file...")
     if "icon" in globals():
-    params = [
-        '--onefile',
-        '--windowed',
-        f'--icon={icon}',
-        "pinkcord_bypass.py"
-    ]
-else:
-    icon_path = "pic/icon.ico"
-    params = [
-        '--onefile',
-        '--windowed',
-        f'--icon={icon_path}',
-        "pinkcord_bypass.py"
-    ]
-PyInstaller.__main__.run(params)
-
+        params = [
+            '--onefile',
+            '--windowed',
+            f'--icon={icon}',
+            "pinkcord_bypass.py"
+        ]
+    else: 
+        params = [
+            '--onefile',
+            '--windowed',
+            "pinkcord_bypass.py"
+        ]
+    PyInstaller.__main__.run(params)
     clear_console()
     print(asciart)
     path = "dist/pinkcord_bypass.exe"
