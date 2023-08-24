@@ -7,6 +7,7 @@ Welcome to the Pinkcord support page! If you need help, have questions, or are f
 If you need assistance or have questions about using Pinkcord, consider the following options:
 
 1. **GitHub Issues**: Check the [GitHub Issues](https://github.com/xanonDev/pinkcord/issues) to see if someone else has already reported a similar issue or question. If not, feel free to open a new issue.
+2. **Email Support**: If you have a specific question or need personalized assistance, you can reach out to us at [xanondev@gmail.com](mailto:xanondev@gmail.com).
 
 ## Reporting Issues
 
