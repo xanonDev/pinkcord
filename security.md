@@ -32,4 +32,4 @@ This security policy is subject to change. We reserve the right to modify this p
 
 ---
 
-This security policy is based on the [GitHub Security Policy template](https://docs.github.com/en/github/building-a-strong-community/creating-a-security-policy).
+This security policy is based on the [GitHub Security Policy template](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository).
