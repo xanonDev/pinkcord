@@ -111,6 +111,7 @@ if answer == "1":
        password = ''.join(secrets.choice(chars) for _ in range(length))
        key = PBKDF2(password.encode(), salt, dkLen=32, count=1000000)
        sourcecode = encrypt_code_AES(sourcecode, key)
+       sourcecode = codecs.decode(sourcecode, 'rot13')
        with open("AES_KEY.txt", "wb") as f:
             f.write(base64.b64encode(key))
     print(GREEN_COLOR + "[*] encoded" + COLOR_RESET)
