@@ -1,5 +1,6 @@
 ![Banner](https://github.com/xanonDev/pinkcord/blob/main/pic/banner.png)
 [![Support](https://img.shields.io/badge/Support-Buy%20me%20a%20Coffee-yellow)](https://www.buymeacoffee.com/pinkcord)
+[![Stars](https://img.shields.io/github/stars/Jvr2022/Dns-lookup)](https://github.com/Jvr2022/Dns-lookup/stargazers) [![License](https://img.shields.io/github/license/Jvr2022/Dns-lookup)](https://github.com/Jvr2022/Dns-lookup/blob/main/LICENSE) [![Issues](https://img.shields.io/github/issues/Jvr2022/Dns-lookup)](https://github.com/Jvr2022/Dns-lookup/issues) [![Forks](https://img.shields.io/github/forks/Jvr2022/Dns-lookup)](https://github.com/Jvr2022/Dns-lookup/network/members)
 
 Pinkcord is a computer virus written in Python that utilizes Discord bots to transmit information. Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
 to put it simply, pinkcord can be compared to meterpreter from metasploit
