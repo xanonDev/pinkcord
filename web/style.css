@@ -17,18 +17,21 @@ section h2 {
     margin-bottom: 20px;
 }
 
+
 /* Hacking style */
+
 pre {
     color: #00ff00;
     background-color: #000000;
     padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #00ff00;
-    font-size: 16px;
+    font-size: 17px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
     white-space: pre-wrap;
 }
 
-.warning, .point, .content {
+.warning,
+.point,
+.content {
     color: #00ff00;
     font-size: 18px;
     line-height: 1.5;
@@ -43,7 +46,9 @@ pre {
     font-weight: bold;
 }
 
+
 /* Additional hacking styling */
+
 .hacking-container {
     background-color: #000000;
     border: 1px solid #00ff00;
