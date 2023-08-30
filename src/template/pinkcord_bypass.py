@@ -19,6 +19,7 @@ import json
 import win32crypt
 from Cryptodome.Cipher import AES
 from Cryptodome.Util.Padding import unpad
+import ctypes
 
 def decrypt_code(encrypted_text, key):
     encrypted_bytes = base64.b64decode(encrypted_text)
