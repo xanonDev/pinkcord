@@ -1,4 +1,5 @@
 ![Banner](https://github.com/xanonDev/pinkcord/blob/main/pic/banner.png)
+[![Support](https://img.shields.io/badge/Support-Buy%20me%20a%20Coffee-yellow)](https://www.buymeacoffee.com/pinkcord)
 
 Pinkcord is a computer virus written in Python that utilizes Discord bots to transmit information. Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
 to put it simply, pinkcord can be compared to meterpreter from metasploit
@@ -39,8 +40,13 @@ The following commands can be used with Pinkcord:
 - `!cdrom [session]`: Opens the CD-ROM drive.
 - `!sessions`: Displays all sessions.
 - `!rename [session] [new_name]`: Changes the name of a session.
+- `!shutdown [session]`: Shuts down the remote computer.
 - `!startup [session] [file path]`: copy file to startup folder (you can copy pinkcord exe file)
+- `!restart [session]` - Restart the remote computer.
 - `!chrome [session] [action(cookie)]` - steals selected data from chrome
+- `!delete [session] [path]` - Deletes a file from the remote computer.
+- `!wallpaper [session] [path]` - changes the wallpaper on the remote computer.
+- `!kill [session] [task]` - remote task killing.
 ## Libraries Used
 
 The following libraries are used in Pinkcord:
@@ -64,6 +70,7 @@ The following libraries are used in Pinkcord:
 - `json`: Getting the decryption key.
 - `win32crypt`: Decrypting cookies.
 - `Cryptodome.Cipher`: Decrypting cookies.
+- `ctypes`: change wallpaper.
 
 ## Pinkcord Website
 
