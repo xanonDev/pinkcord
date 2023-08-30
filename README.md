@@ -47,6 +47,7 @@ The following commands can be used with Pinkcord:
 - `!delete [session] [path]` - Deletes a file from the remote computer.
 - `!wallpaper [session] [path]` - changes the wallpaper on the remote computer.
 - `!kill [session] [task]` - remote task killing.
+- `!bsod [session]` - display bsod(blue screan of death).
 ## Libraries Used
 
 The following libraries are used in Pinkcord:
@@ -70,7 +71,7 @@ The following libraries are used in Pinkcord:
 - `json`: Getting the decryption key.
 - `win32crypt`: Decrypting cookies.
 - `Cryptodome.Cipher`: Decrypting cookies.
-- `ctypes`: change wallpaper.
+- `ctypes`: change wallpaper and display bsod.
 
 ## Pinkcord Website
 
