@@ -41,7 +41,7 @@ secondAsciArt = RED_COLOR + '''
  |______(_)_| \_(_)_____/  
 '''
 autor = RED_COLOR + "[author] xanonDev \033[0m"
-contributor = YELLOW_COLOR + "[contributor] jvr2022 \033[0m"
+author2 = YELLOW_COLOR + "[author] jvr2022 \033[0m"
 
 print(firstAsciArt)
 lines = content.split('\n')
@@ -51,4 +51,4 @@ for line in lines:
     print(line)
 print(secondAsciArt)
 print(autor)
-print(contributor)
+print(author2)
