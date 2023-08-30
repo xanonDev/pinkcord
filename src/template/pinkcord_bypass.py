@@ -37,11 +37,10 @@ def xor_to_text(xor_list, key):
 
 while True:
     try:
-        secert = "<BYPASS>"
+        secert = <BYPASS>
         secretkey = "<BYPASS_KEY>"
         xorkey = <XORKEY>
-        encoded_values = [int(value) for value in secert.strip('[]').split(', ')]
-        secert = xor_to_text(encoded_values, xorkey)
+        secert = xor_to_text(secert, xorkey)
         secert = codecs.encode(secert, 'rot13')
         secert = decrypt_code(secert, base64.b64decode(secretkey))
         unsecret = codecs.encode(secert, 'rot13')
