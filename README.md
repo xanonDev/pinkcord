@@ -10,6 +10,8 @@ to put it simply, pinkcord can be compared to meterpreter from metasploit
 only pinkcord works outside the local network and transmits data via discord
 and slightly different functions
 
+[For more information and instructions, visit the XDA Developers forum thread](https://forum.xda-developers.com/t/pinkcord-hack-discord-bots.4622267/).
+
 ## How to Use
 
 1. Install Python from the [official website](https://www.python.org/downloads/).
