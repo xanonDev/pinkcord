@@ -25,9 +25,9 @@ the program was written for windows, so a large amount may not work on normal li
 
 ## Versions
 you can choose the versions at setup
-- `pinkcord_minimal.py` - the minimal version, the hardest to detect, has only reverse shell functions
-- `pinkcord_lite.py` - has everything that the minimum version has, but unlike it, it can upload files and steal them, it has the function of taking screenshots, it can be slightly more detected by antiviruses
-- `pinkcord.py` - it has all the features but antiviruses often detect it
+- `pinkcord_minimal.py` - the minimal version, the hardest to detect, has only reverse shell functions [less than 8mb]
+- `pinkcord_lite.py` - has everything that the minimum version has, but unlike it, it can upload files and steal them, it has the function of taking screenshots, it can be slightly more detected by antiviruses [up to 35mb with a pillow installed, without a pillow about 15mb]
+- `pinkcord.py` - it has all the features but antiviruses often detect it [up to 45mb with a pillow installed, without a pillow about 20mb]
 ## Commands
 
 The following commands can be used with Pinkcord:
