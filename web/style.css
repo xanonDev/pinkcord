@@ -71,3 +71,13 @@ pre {
 a {
     color: crimson;
 }
+
+.links li {
+    list-style-type: none;
+}
+
+.links li::before {
+    content: "•";
+    color: red;
+    margin-right: 5px;
+}
