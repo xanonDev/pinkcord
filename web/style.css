@@ -70,6 +70,7 @@ pre {
 
 a {
     color: crimson;
+    text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 30px crimson;
 }
 
 .links li {
@@ -78,6 +79,11 @@ a {
 
 .links li::before {
     content: "•";
-    color: red;
+    color: crimson;
     margin-right: 5px;
+    text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 30px crimson;
+}
+
+h2 {
+    text-shadow: 0 0 4px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
