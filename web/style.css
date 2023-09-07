@@ -73,6 +73,11 @@ a {
     text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 30px crimson;
 }
 
+a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
+
 .links li {
     list-style-type: none;
 }
