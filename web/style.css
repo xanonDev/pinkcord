@@ -61,8 +61,13 @@ pre {
     color: #00ff00;
     margin: 10px 0;
 }
+
 @media (max-width: 1000px) {
     pre {
         font-size: 10px;
     }
+}
+
+a {
+    color: crimson;
 }
