@@ -1,94 +1,42 @@
 body {
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #00ff00;
+    background-color: #070707;
+    font-size: 20px;
+    color: white;
+    font-family: monospace;
 }
-
-section {
-    background-color: #000000;
-    padding: 40px;
-}
-
-section h2 {
-    color: #00ff00;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-
-/* Hacking style */
 
 pre {
-    color: #00ff00;
-    background-color: #000000;
-    padding: 15px;
-    font-size: 17px;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-    white-space: pre-wrap;
-}
-
-.warning,
-.point,
-.content {
-    color: #00ff00;
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 10px 0;
-}
-
-.warning {
-    font-weight: bold;
+    color: #e13df7;
 }
 
 .point {
-    font-weight: bold;
-}
-
-
-/* Additional hacking styling */
-
-.hacking-container {
-    background-color: #000000;
-    border: 1px solid #00ff00;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.hacking-container p {
     color: #00ff00;
-    margin: 10px 0;
+}
+
+.content {
+    color: yellow;
+}
+
+.warning {
+    color: red;
 }
 
 @media (max-width: 1000px) {
-    pre {
-        font-size: 10px;
+    body {
+        font-size: 40px;
     }
 }
 
-a {
-    color: crimson;
-    text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 30px crimson;
+#skip {
+    cursor: pointer;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-a:hover {
+#skip:hover {
     color: #00ff00;
     text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-}
-
-.links li {
-    list-style-type: none;
-}
-
-.links li::before {
-    content: "•";
-    color: crimson;
-    margin-right: 5px;
-    text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 30px crimson;
-}
-
-h2 {
-    text-shadow: 0 0 4px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
