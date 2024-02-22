@@ -25,10 +25,6 @@ In order to protect our users and address security issues effectively, we ask yo
 - **Do not exploit the issue**: Refrain from attempting to exploit the security vulnerability or accessing other users' accounts or data.
 - **Hold off on sharing**: Do not share details of the security issue with third parties until the issue has been resolved and publicly disclosed.
 
-## Bug Bounty
-
-We appreciate the efforts of security researchers and offer a bug bounty program as a token of our gratitude for responsibly disclosing vulnerabilities. The rewards vary based on the severity of the reported issue.
-
 ## Policy Changes
 
 This security policy is subject to change. We reserve the right to modify this policy as needed. Any reports made prior to policy changes will be handled according to the policy in place at the time of submission.
