@@ -8,33 +8,33 @@ Pinkcord is a project created for educational purposes to demonstrate various fu
 
 ## Commands
 
-- `!shell [session] [output(yes, no)] [command]`: Executes a shell command on a remote computer. `all versions`
-- `!ss [session]`: Captures a screenshot from a remote computer. `pinkcord.py and pinkcord lite`
-- `!keylogger [session] [action(start, stop, log)]`: Starts or stops a keylogger on a remote computer. `only in pinkcord.py`
-- `!steal [session] [file_names]`: Steals files from a remote computer. `pinkcord.py and pinkcord lite`
-- `!info [session]`: Retrieves information about the remote computer system. `only in pinkcord.py`
-- `!cd [session] [path]`: Changes the current directory on the remote computer. `all versions`
-- `!up [session]`: Increases the volume on the remote computer. `only in pinkcord.py`
-- `!down [session]`: Decreases the volume on the remote computer. `only in pinkcord.py`
-- `!message [session] [title] [button] [message]`: Displays a message on the remote computer.`only in pinkcord.py`
-- `!dir [session]`: Displays the current directory on the remote computer. `all versions`
-- `!upload [session] [link] [file_name]`: Sends a file to the remote computer. `pinkcord.py and pinkcord lite`
-- `!click [session] [x] [y]`: Clicks at a specific location on the screen. `only in pinkcord.py`
-- `!press [session] [key]`: Presses a specific key (default: Enter). `only in pinkcord.py`
-- `!cli [session]`: Copies the clipboard content. `only in pinkcord.py`
-- `!write [session] [message]`: Types using the keyboard. `only in pinkcord.py`
-- `!loc [session]`: Displays IP information. `only in pinkcord.py`
-- `!cdrom [session]`: Opens the CD-ROM drive. `only in pinkcord.py`
-- `!sessions`: Displays all sessions. `all versions`
-- `!rename [session] [new_name]`: Changes the name of a session. `all versions`
-- `!shutdown [session]`: Shuts down the remote computer. `all versions`
-- `!startup [session] [file path]`: copy file to startup folder (you can copy pinkcord exe file) `only in pinkcord.py`
-- `!restart [session]` - Restart the remote computer. `all versions`
-- `!chrome [session] [action(cookie)]` - steals selected data from chrome `only in pinkcord.py`
-- `!delete [session] [path]` - Deletes a file from the remote computer. `all versions`
-- `!wallpaper [session] [path]` - changes the wallpaper on the remote computer. `only in pinkcord.py`
-- `!kill [session] [task]` - remote task killing. `all versions`
-- `!bsod [session]` - display bsod(blue screan of death). `only in pinkcord.py`
+- `!shell [session] [output(yes, no)] [command]`: Executes a shell command on a remote computer. (Available in all versions)
+- `!ss [session]`: Captures a screenshot from a remote computer. (Available in pinkcord.py and pinkcord lite)
+- `!keylogger [session] [action(start, stop, log)]`: Starts or stops a keylogger on a remote computer. (Available only in pinkcord.py)
+- `!steal [session] [file_names]`: Steals files from a remote computer. (Available in pinkcord.py and pinkcord lite)
+- `!info [session]`: Retrieves information about the remote computer system. (Available only in pinkcord.py)
+- `!cd [session] [path]`: Changes the current directory on the remote computer. (Available in all versions)
+- `!up [session]`: Increases the volume on the remote computer. (Available only in pinkcord.py)
+- `!down [session]`: Decreases the volume on the remote computer. (Available only in pinkcord.py)
+- `!message [session] [title] [button] [message]`: Displays a message on the remote computer. (Available only in pinkcord.py)
+- `!dir [session]`: Displays the current directory on the remote computer. (Available in all versions)
+- `!upload [session] [link] [file_name]`: Sends a file to the remote computer. (Available in pinkcord.py and pinkcord lite)
+- `!click [session] [x] [y]`: Clicks at a specific location on the screen. (Available only in pinkcord.py)
+- `!press [session] [key]`: Presses a specific key (default: Enter). (Available only in pinkcord.py)
+- `!cli [session]`: Copies the clipboard content. (Available only in pinkcord.py)
+- `!write [session] [message]`: Types using the keyboard. (Available only in pinkcord.py)
+- `!loc [session]`: Displays IP information. (Available only in pinkcord.py)
+- `!cdrom [session]`: Opens the CD-ROM drive. (Available only in pinkcord.py)
+- `!sessions`: Displays all sessions. (Available in all versions)
+- `!rename [session] [new_name]`: Changes the name of a session. (Available in all versions)
+- `!shutdown [session]`: Shuts down the remote computer. (Available in all versions)
+- `!startup [session] [file path]`: Copies a file to the startup folder. (Available only in pinkcord.py)
+- `!restart [session]`: Restarts the remote computer. (Available in all versions)
+- `!chrome [session] [action(cookie)]`: Steals selected data from Chrome. (Available only in pinkcord.py)
+- `!delete [session] [path]`: Deletes a file from the remote computer. (Available in all versions)
+- `!wallpaper [session] [path]`: Changes the wallpaper on the remote computer. (Available only in pinkcord.py)
+- `!kill [session] [task]`: Remote task killing. (Available in all versions)
+- `!bsod [session]`: Displays a blue screen of death. (Available only in pinkcord.py)
 
 ## More Information
 
