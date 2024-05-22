@@ -493,7 +493,7 @@ while True:
             '''
             await ctx.send(wiadomosc)
 
-        bot.run(hshfasudf)
+        client.run(hshfasudf)
     except:
         print("no token or internet")
         sleep(20)
