@@ -12,6 +12,10 @@ to put it simply, pinkcord can be compared to meterpreter from metasploit
 only pinkcord works outside the local network and transmits data via discord
 and slightly different functions
 
+## Important Note on Windows Defender
+
+When running Pinkcord, you may receive a warning from Windows Defender. This is because the program uses certain command-line instructions that can be flagged by antivirus software. Please be assured that this warning is a false positive due to the nature of the commands used, and not because of any malicious intent. Pinkcord is designed solely for ethical and educational purposes. You should not be alarmed by this warning, as the program does not perform any harmful actions on your system.
+
 ## How to Use
 
 1. Install Python from the [official website](https://www.python.org/downloads/).
