@@ -7,3 +7,4 @@ pyinstaller
 pypiwin32
 pycryptodomex
 pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
+aiohttp>=3.10.11 # not directly required, pinned by Snyk to avoid a vulnerability
