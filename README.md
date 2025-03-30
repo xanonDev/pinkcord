@@ -1,16 +1,20 @@
+
 ![Banner](https://github.com/xanonDev/pinkcord/blob/main/pic/banner.png)
 [![Support](https://img.shields.io/badge/Support-Buy%20me%20a%20Coffee-yellow)](https://www.buymeacoffee.com/pinkcord)
 [![GitHub Stars](https://img.shields.io/github/stars/xanonDev/pinkcord.svg?style=flat&label=Stars&color=yellow)](https://github.com/xanonDev/pinkcord)
 [![License](https://img.shields.io/github/license/xanonDev/pinkcord.svg?style=flat&label=License)](https://github.com/xanonDev/pinkcord/blob/main/LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/xanonDev/pinkcord.svg?style=flat&label=Issues&color=red)](https://github.com/xanonDev/pinkcord/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/xanonDev/pinkcord.svg?style=flat&label=Forks&color=blue)](https://github.com/xanonDev/pinkcord)
-[![Discord](https://img.shields.io/discord/1146757562646151168?label=Discord&logo=discord&logoColor=white&color=7289da)](https://discord.gg/gX72uKxJr7)
-
+[![OlD Discord](https://img.shields.io/discord/1146757562646151168?label=Discord&logo=discord&logoColor=white&color=7289da)](https://discord.gg/gX72uKxJr7)
 
 Pinkcord is a computer virus written in Python that utilizes Discord bots to transmit information. Please note that this program was created solely for educational purposes, and it should not be used to engage in any illegal activities. The use of Pinkcord may have severe legal consequences, including the banning of your Discord account. Download and use this program responsibly.
 to put it simply, pinkcord can be compared to meterpreter from metasploit
 only pinkcord works outside the local network and transmits data via discord
 and slightly different functions
+
+## Important Note on Windows Defender
+
+When running Pinkcord, you may receive a warning from Windows Defender. This is because the program uses certain command-line instructions that can be flagged by antivirus software. Please be assured that this warning is a false positive due to the nature of the commands used, and not because of any malicious intent. Pinkcord is designed solely for ethical and educational purposes. You should not be alarmed by this warning, as the program does not perform any harmful actions on your system.
 
 ## How to Use
 
@@ -28,6 +32,7 @@ you can choose the versions at setup
 - `pinkcord_minimal.py` - the minimal version, the hardest to detect, has only reverse shell functions [less than 8mb]
 - `pinkcord_lite.py` - has everything that the minimum version has, but unlike it, it can upload files and steal them, it has the function of taking screenshots, it can be slightly more detected by antiviruses [up to 35mb with a pillow installed, without a pillow about 15mb]
 - `pinkcord.py` - it has all the features but antiviruses often detect it [up to 45mb with a pillow installed, without a pillow about 20mb]
+
 ## Commands
 
 The following commands can be used with Pinkcord:
@@ -84,10 +89,5 @@ The following libraries are used in Pinkcord:
 - `Cryptodome.Cipher`: Decrypting cookies.
 - `ctypes`: change wallpaper and display bsod.
 
-## Pinkcord Website
-
-For more information, you can visit the [Pinkcord Project Website](https://pinkcord-project--xanondev.repl.co/) where you can find additional resources and details about the project.
-
----
 
 Please exercise caution and use this program responsibly. Remember that engaging in any illegal activities can result in serious consequences.
